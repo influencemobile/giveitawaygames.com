@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Economics Model — 25 Words or Less Daily Play</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b1731">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <a class="brand-lockup" href="/" aria-label="25 Words or Less Daily Play concept home">
+    <img class="brand-logo" src="assets/25-words-or-less-logo.png" alt="25 Words or Less">
+  </a>
+  <nav class="site-nav" aria-label="Model pages">
+    <a href="/economics-model" class="active">Economics Model</a>
+    <a href="/install-model">Install Model</a>
+  </nav>
+  <span class="privacy-chip">Internal planning tool</span>
+</header>
+
+<main id="main">
+<section class="section model-section" id="economics-model">
+  <div class="section-kicker">Live model</div>
+  <div class="section-heading">
+    <h2>Economics Model</h2>
+    <p>
+      Revenue projections that flow from engaged installs, monthly churn,
+      and the resulting Monthly Active User base—at Rewarded Play's
+      standard $5.50 gross revenue per Monthly Active User.
+    </p>
+  </div>
+
+  <div class="model-revenue-hero">
+    <div class="mrh-label">Revenue Projection</div>
+    <div class="mrh-figures">
+      <div class="mrh-figure">
+        <div class="mrh-value tabular" id="gAvgRevHero">$0</div>
+        <div class="mrh-sub">Avg. Monthly Gross Revenue</div>
+      </div>
+      <div class="mrh-figure">
+        <div class="mrh-value tabular" id="gAnnualRev">$0</div>
+        <div class="mrh-sub">Year-2 Annualized Revenue</div>
+      </div>
+    </div>
+    <div class="mrh-note">
+      At $5.50 gross revenue per Monthly Active User—the same per-player
+      rate used across Rewarded Play's white-label model—averaging
+      <b class="tabular" id="gAvgMau">0</b> MAU across the 24-month run
+      below.
+    </div>
+  </div>
+
+  <div class="model-card">
+    <h3>Monthly Active Users Over Time</h3>
+    <div class="model-mau-chart" id="mauChart"></div>
+    <div class="model-mau-axis"><span>Month 1</span><span>Month 12</span><span>Month 24</span></div>
+
+    <div class="model-stat-strip">
+      <div class="model-stat is-modeled">
+        <span>New Engaged Players / Mo.</span>
+        <strong class="tabular" id="gNewEngaged">0</strong>
+      </div>
+      <div class="model-stat is-baseline">
+        <span>Month 12 MAU</span>
+        <strong class="tabular" id="gMau12">0</strong>
+      </div>
+      <div class="model-stat is-baseline">
+        <span>Month 24 MAU</span>
+        <strong class="tabular" id="gMau24">0</strong>
+      </div>
+      <div class="model-stat is-modeled">
+        <span>Steady-State MAU</span>
+        <strong class="tabular" id="gSteadyMau">0</strong>
+      </div>
+    </div>
+
+    <div class="model-foot-note">
+      Model: each month, (combined modeled installs from the Install Model
+      page ÷ 12) × engaged-install rate = new engaged players added to the
+      base; the existing base loses the churn rate each month before that
+      addition. Steady-State MAU is where the base would flatten out if
+      inflow and churn both held constant indefinitely (new engaged
+      players ÷ churn rate). "Average MAU" (in the revenue banner above)
+      is the mean across this full 24-month run, and gross revenue is MAU
+      × $5.50/month.
+      <span id="syncNote"></span>
+    </div>
+  </div>
+
+  <div class="model-card">
+    <h3>Growth Inputs</h3>
+    <div class="model-field">
+      <div class="model-field-top">
+        <label for="engageRate">Engaged-install rate</label>
+        <span class="mf-val tabular" id="engageRateVal">45%</span>
+      </div>
+      <input type="range" id="engageRate" min="40" max="50" step="1" value="45">
+      <div class="model-note">
+        Share of combined installs (Install Model page) that turn into a
+        real, engaged player—not just a download that's never opened
+        again.
+      </div>
+    </div>
+    <div class="model-field model-lift-field">
+      <div class="model-field-top">
+        <label for="monthlyChurn">Monthly churn</label>
+        <span class="mf-val lift tabular" id="monthlyChurnVal">15%</span>
+      </div>
+      <input type="range" id="monthlyChurn" min="5" max="25" step="1" value="15">
+      <div class="model-note">
+        Share of active engaged players lost each month. Lower churn means
+        the MAU base builds toward a higher steady state.
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<script>
+  const MONTHS = 24;
+  const REV_PER_MAU = 5.50;
+  const DEFAULT_COMBINED_INSTALLS = 179848; // Install Model page's default scenario
+
+  function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
+
+  const els = {
+    engageRate: document.getElementById('engageRate'),
+    monthlyChurn: document.getElementById('monthlyChurn'),
+  };
+  const out = {
+    engageRateVal: document.getElementById('engageRateVal'),
+    monthlyChurnVal: document.getElementById('monthlyChurnVal'),
+    gNewEngaged: document.getElementById('gNewEngaged'),
+    gAvgMau: document.getElementById('gAvgMau'),
+    gAvgRevHero: document.getElementById('gAvgRevHero'),
+    gMau12: document.getElementById('gMau12'),
+    gMau24: document.getElementById('gMau24'),
+    gSteadyMau: document.getElementById('gSteadyMau'),
+    gAnnualRev: document.getElementById('gAnnualRev'),
+    mauChart: document.getElementById('mauChart'),
+    syncNote: document.getElementById('syncNote'),
+  };
+
+  let combinedInstalls = DEFAULT_COMBINED_INSTALLS;
+  let synced = false;
+  try {
+    const saved = window.localStorage.getItem('giveItAwayCombinedInstalls');
+    if (saved) {
+      const n = parseFloat(saved);
+      if (!Number.isNaN(n) && n > 0) { combinedInstalls = n; synced = true; }
+    }
+  } catch (e) {
+    // localStorage unavailable — keep the default scenario.
+  }
+
+  function recalc(){
+    const engageRate = parseFloat(els.engageRate.value) / 100;
+    const monthlyChurn = parseFloat(els.monthlyChurn.value) / 100;
+    out.engageRateVal.textContent = (engageRate*100).toFixed(0) + '%';
+    out.monthlyChurnVal.textContent = (monthlyChurn*100).toFixed(0) + '%';
+
+    const monthlyNewInstalls = combinedInstalls / 12;
+    const monthlyNewEngaged = monthlyNewInstalls * engageRate;
+    out.gNewEngaged.textContent = fmt(monthlyNewEngaged);
+
+    const mauSeries = [];
+    let mau = 0;
+    for(let m=0; m<MONTHS; m++){
+      mau = mau * (1 - monthlyChurn) + monthlyNewEngaged;
+      mauSeries.push(mau);
+    }
+    const avgMau = mauSeries.reduce((s,v) => s+v, 0) / mauSeries.length;
+    const mau12 = mauSeries[11];
+    const mau24 = mauSeries[23];
+    const steadyMau = monthlyChurn > 0 ? (monthlyNewEngaged / monthlyChurn) : mau24;
+    const avgMonthlyRev = avgMau * REV_PER_MAU;
+    const year2AnnualRev = mauSeries.slice(12, 24).reduce((s,v) => s+v, 0) * REV_PER_MAU;
+
+    out.gAvgMau.textContent = fmt(avgMau);
+    out.gAvgRevHero.textContent = '$' + fmt(avgMonthlyRev);
+    out.gMau12.textContent = fmt(mau12);
+    out.gMau24.textContent = fmt(mau24);
+    out.gSteadyMau.textContent = fmt(steadyMau);
+    out.gAnnualRev.textContent = '$' + fmt(year2AnnualRev);
+
+    const maxMau = Math.max(...mauSeries, 1);
+    out.mauChart.innerHTML = mauSeries.map((v, i) =>
+      `<div class="model-mau-bar${i>=12?' engaged-phase':''}" style="height:${Math.max(2,(v/maxMau)*100)}%" title="Month ${i+1}: ${fmt(v)} MAU"></div>`
+    ).join('');
+
+    out.syncNote.textContent = synced
+      ? ` Combined installs (${fmt(combinedInstalls)}) are synced from the Install Model page—the last scenario you viewed in this browser.`
+      : ` Using the Install Model page's default scenario (${fmt(combinedInstalls)} combined installs)—open that page first in this browser to feed in your own numbers.`;
+  }
+
+  Object.values(els).forEach(el => el.addEventListener('input', recalc));
+  recalc();
+</script>
+</body>
+</html>
