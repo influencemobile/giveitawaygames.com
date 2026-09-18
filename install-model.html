@@ -72,9 +72,9 @@
     </div>
   </div>
 
+  <div class="model-channel-kicker"><span class="mck-dot"></span><span>In-Show QR Scans</span></div>
   <div class="model-grid">
     <div>
-      <div class="model-channel-kicker"><span class="mck-dot"></span><span>In-Show QR Scans</span></div>
       <div class="model-card">
         <h3>QR Scan Inputs</h3>
         <div class="model-field">
@@ -120,8 +120,36 @@
           <button class="preset-btn" data-scan="1.5" data-conv="5">Optimistic Case</button>
         </div>
       </div>
+    </div>
 
-      <div class="model-channel-kicker"><span class="mck-dot gold"></span><span>Social Media Posts</span></div>
+    <div>
+      <div class="model-card">
+        <h3>QR Scan Results</h3>
+        <div class="model-headline-result">
+          <div class="mhr-value tabular" id="rDownloads">177,450</div>
+          <div class="mhr-label">Modeled Season Downloads</div>
+          <div class="mhr-delta" id="rDelta">+0 vs. Season 9 baseline</div>
+        </div>
+        <div class="model-results-grid">
+          <div class="model-result-cell is-baseline"><div class="rlabel">Baseline Scans</div><div class="rval tabular" id="rBaseScans">624,000</div></div>
+          <div class="model-result-cell is-modeled"><div class="rlabel">Modeled Scans</div><div class="rval tabular" id="rModScans">624,000</div></div>
+          <div class="model-result-cell is-baseline"><div class="rlabel">Baseline Downloads</div><div class="rval tabular" id="rBaseDownloads">31,200</div></div>
+          <div class="model-result-cell is-modeled"><div class="rlabel">Effective Conversion</div><div class="rval tabular" id="rEffConv">5.0%</div></div>
+        </div>
+        <div class="model-bars">
+          <div class="model-bar-row"><div class="mbar-label">Scans</div><div class="mbar-track"><div class="mbar-fill baseline" id="barScansBase" style="width:100%;"></div></div><div class="mbar-val tabular" id="barScansVal">1.00x</div></div>
+          <div class="model-bar-row"><div class="mbar-label">Downloads</div><div class="mbar-track"><div class="mbar-fill modeled" id="barDownloadsBase" style="width:100%;"></div></div><div class="mbar-val tabular" id="barDownloadsVal">1.00x</div></div>
+        </div>
+        <div class="model-foot-note">
+          Baseline = 25 Words or Less's actual Season 9 rate (624K+ QR scans across 260 episodes and 3 ad breaks each, ≈2,400 scans/episode), with a scan-to-download conversion borrowed from AFV's observed pilot since 25 Words or Less doesn't have its own yet. Modeled = baseline adjusted by the scan-volume and conversion-rate sliders above. These are planning assumptions, not a forecast.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="model-channel-kicker"><span class="mck-dot gold"></span><span>Social Media Posts</span></div>
+  <div class="model-grid">
+    <div>
       <div class="model-card">
         <h3>Social Post Inputs</h3>
         <div class="model-field">
@@ -161,30 +189,6 @@
     </div>
 
     <div>
-      <div class="model-channel-kicker"><span class="mck-dot"></span><span>In-Show QR Scans</span></div>
-      <div class="model-card">
-        <h3>QR Scan Results</h3>
-        <div class="model-headline-result">
-          <div class="mhr-value tabular" id="rDownloads">177,450</div>
-          <div class="mhr-label">Modeled Season Downloads</div>
-          <div class="mhr-delta" id="rDelta">+0 vs. Season 9 baseline</div>
-        </div>
-        <div class="model-results-grid">
-          <div class="model-result-cell is-baseline"><div class="rlabel">Baseline Scans</div><div class="rval tabular" id="rBaseScans">624,000</div></div>
-          <div class="model-result-cell is-modeled"><div class="rlabel">Modeled Scans</div><div class="rval tabular" id="rModScans">624,000</div></div>
-          <div class="model-result-cell is-baseline"><div class="rlabel">Baseline Downloads</div><div class="rval tabular" id="rBaseDownloads">31,200</div></div>
-          <div class="model-result-cell is-modeled"><div class="rlabel">Effective Conversion</div><div class="rval tabular" id="rEffConv">5.0%</div></div>
-        </div>
-        <div class="model-bars">
-          <div class="model-bar-row"><div class="mbar-label">Scans</div><div class="mbar-track"><div class="mbar-fill baseline" id="barScansBase" style="width:100%;"></div></div><div class="mbar-val tabular" id="barScansVal">1.00x</div></div>
-          <div class="model-bar-row"><div class="mbar-label">Downloads</div><div class="mbar-track"><div class="mbar-fill modeled" id="barDownloadsBase" style="width:100%;"></div></div><div class="mbar-val tabular" id="barDownloadsVal">1.00x</div></div>
-        </div>
-        <div class="model-foot-note">
-          Baseline = 25 Words or Less's actual Season 9 rate (624K+ QR scans across 260 episodes and 3 ad breaks each, ≈2,400 scans/episode), with a scan-to-download conversion borrowed from AFV's observed pilot since 25 Words or Less doesn't have its own yet. Modeled = baseline adjusted by the scan-volume and conversion-rate sliders above. These are planning assumptions, not a forecast.
-        </div>
-      </div>
-
-      <div class="model-channel-kicker"><span class="mck-dot gold"></span><span>Social Media Posts</span></div>
       <div class="model-card">
         <h3>Social Post Results</h3>
         <div class="model-headline-result">

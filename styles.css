@@ -1409,6 +1409,14 @@ h1 span {
   margin-right: auto;
 }
 
+/* .section-heading p is white/translucent by default because on the real
+   homepage it's only ever used inside a dark-background section
+   (.loop-section). Our model pages sit on the light --paper background, so
+   it needs its own dark, legible color here. */
+.model-section .section-heading p {
+  color: var(--ink-soft);
+}
+
 .model-grid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
