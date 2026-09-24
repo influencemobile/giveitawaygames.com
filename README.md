@@ -1,54 +1,27 @@
-# 25 Words or Less Daily Play Pitch
+# Give It Away Games — partnership presentation
 
-Private partnership concept site for a 25 Words or Less daily play and rewards experience powered by Influence Mobile.
+Give It Away Games is the dedicated 25 Words or Less white-label rewards app, powered by Influence Mobile.
 
-## Project Status
+## Preview and upload
+Unzip and open index.html in a browser, keeping all files and assets together. For local serving, run npm run dev with Python 3 installed.
 
-This is a static HTML/CSS pitch site. There is no build step and no runtime dependency.
+Upload all package contents to the SAME GitHub review branch, replacing matching files. Do not upload the ZIP or an enclosing folder. Commit to that branch to update its existing pull request. Review the Vercel preview before merging into the production branch.
 
-## Local Preview
+No build step is required. Existing Vercel configuration is included. Relative page links work in local folders and GitHub Pages.
 
-```bash
-npm run dev
-```
+## Presentation
+- Seven sections including the opening: dedicated app, audience fit, brand loyalty and missed opportunity, player experience, platform, financial opportunity, partnership.
+- Four approved phone mockups with full-size viewing.
+- $250M+ lifetime revenue and $50M+ rewards paid, per Influence Mobile.
+- Partnership and launch language throughout; no proposed pilot.
+- Install and 24-month economics models retained; partner share is shown first.
+- No guarantee amount or agreed commercial term has been invented. Minimum-guarantee payments and offsets are not included in the model.
 
-Then open:
+## Checks and assumptions
+HTML nesting, page links, assets, JavaScript and model calculations checked. Browser rendering has not been verified in this environment.
 
-```text
-http://localhost:4173
-```
+The main page's 45,000-player annualized scenario is distinct from the 24-month acquisition ramp. Original acquisition and revenue assumptions are preserved. Repeat scans and channel overlap are not deduplicated; this is disclosed on the Install Model page. Illustrative game offers and bonus rules remain subject to final launch configuration.
 
-## GitHub Setup
+Noindex is not access control. No live accounts, reward processing or analytics are included.
 
-Recommended repo visibility: private until the partner-facing version is approved.
-
-After creating an empty GitHub repository, run:
-
-```bash
-git init
-git add .
-git commit -m "Initial 25 Words or Less pitch site"
-git branch -M main
-git remote add origin git@github.com:YOUR-ORG/25-words-less-daily-play-pitch.git
-git push -u origin main
-```
-
-Replace `YOUR-ORG` with the GitHub user or organization that should own the repo.
-
-## Vercel Setup
-
-This is a static site. When importing the GitHub repo into Vercel, use:
-
-- Framework Preset: Other
-- Build Command: leave blank
-- Output Directory: leave blank
-- Install Command: leave blank
-
-After the project is live, add the purchased domain in Vercel Project Settings > Domains and follow Vercel's DNS instructions.
-
-The page and Vercel headers currently include `noindex, nofollow` protection for private pitch use.
-
-## Notes
-
-- The phone images are illustrative mockups from the existing Give It Away Games concept.
-- Final partner branding, promotion mechanics, rules, prize language, and game catalog should be approved before external distribution.
+Audience fit restored with the previously verified ESA 2025 source. Brand value now addresses loyalty and affinity between episodes alongside partner revenue. Both financial models remain unchanged.

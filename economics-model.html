@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Economics Model — 25 Words or Less Daily Play</title>
+<title>Economics Model — Give It Away Games</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0b1731">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -13,30 +13,29 @@
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
-  <a class="brand-lockup" href="/" aria-label="25 Words or Less Daily Play concept home">
-    <img class="brand-logo" src="assets/25-words-or-less-logo.png" alt="25 Words or Less">
+  <a class="brand-lockup" href="index.html" aria-label="Give It Away Games partnership home">
+    <span class="app-name">GIVE IT AWAY<br><b>GAMES</b></span><img class="brand-logo" src="assets/25-words-or-less-logo.png" alt="25 Words or Less">
   </a>
-  <nav class="site-nav" aria-label="Model pages">
-    <a href="/economics-model" class="active">Economics Model</a>
-    <a href="/install-model">Install Model</a>
+  <nav class="site-nav" aria-label="Model pages"><a href="index.html">Overview</a>
+    <a href="economics-model.html" class="active" aria-current="page">Economics Model</a>
+    <a href="install-model.html">Install Model</a>
   </nav>
-  <span class="privacy-chip">Internal planning tool</span>
+  <span class="privacy-chip">Partnership proposal</span>
 </header>
 
-<main id="main">
+<main id="main"><noscript><p class="scenario-note">Enable JavaScript to calculate this model. The zero placeholders below are not calculated results.</p></noscript>
 <section class="section model-section" id="economics-model">
-  <div class="section-kicker">Live model</div>
+  <div class="section-kicker">Interactive scenario model</div>
   <div class="section-heading">
     <h2>Economics Model</h2>
     <p>
-      Revenue projections that flow from engaged installs, monthly churn,
-      and the resulting Monthly Active User base—at Rewarded Play's
-      standard $5.50 gross revenue per Monthly Active User.
+      See how acquisition and retention translate into partner revenue over 24 months. Adjust the growth inputs below or change the acquisition assumptions in the Install Model.
     </p>
   </div>
 
-  <div class="model-revenue-hero">
-    <div class="mrh-label">Revenue Projection</div>
+  <div class="model-card partner-share-lead"><h3>Partner share</h3><p>Uses $2.00–$2.25 per active player per month. Figures below show the partner’s share; gross platform revenue is shown separately.</p><div class="model-stat-strip"><div class="model-stat"><span>Year 1 partner share</span><strong id="partnerY1">—</strong></div><div class="model-stat"><span>Year 2 partner share</span><strong id="partnerY2">—</strong></div></div><p class="model-note">Totals sum each year’s monthly active-player estimates. Minimum-guarantee amounts, payment timing and any offset against revenue share are not modeled; these remain subject to agreement.</p></div>
+<div class="model-revenue-hero">
+    <div class="mrh-label">Illustrative Gross Revenue</div>
     <div class="mrh-figures">
       <div class="mrh-figure">
         <div class="mrh-value tabular" id="gAvgRevHero">$0</div>
@@ -44,12 +43,11 @@
       </div>
       <div class="mrh-figure">
         <div class="mrh-value tabular" id="gAnnualRev">$0</div>
-        <div class="mrh-sub">Year-2 Annualized Revenue</div>
+        <div class="mrh-sub">Year 2 Gross Revenue</div>
       </div>
     </div>
     <div class="mrh-note">
-      At $5.50 gross revenue per Monthly Active User—the same per-player
-      rate used across Rewarded Play's white-label model—averaging
+      Uses Influence Mobile’s $5.50 monthly gross revenue assumption per active player, averaging
       <b class="tabular" id="gAvgMau">0</b> MAU across the 24-month run
       below.
     </div>
@@ -57,7 +55,7 @@
 
   <div class="model-card">
     <h3>Monthly Active Users Over Time</h3>
-    <div class="model-mau-chart" id="mauChart"></div>
+    <div class="model-mau-chart" id="mauChart" role="img" aria-label="Monthly active players over 24 months"></div>
     <div class="model-mau-axis"><span>Month 1</span><span>Month 12</span><span>Month 24</span></div>
 
     <div class="model-stat-strip">
@@ -79,8 +77,8 @@
       </div>
     </div>
 
-    <div class="model-foot-note">
-      Model: each month, (combined modeled installs from the Install Model
+    <details class="model-method"><summary>Model assumptions and methodology</summary><div class="model-foot-note">
+      Assumes installs arrive evenly across each year, with the same annual acquisition pace repeated in year 2. Each month, (combined modeled installs from the Install Model
       page ÷ 12) × engaged-install rate = new engaged players added to the
       base; the existing base loses the churn rate each month before that
       addition. Steady-State MAU is where the base would flatten out if
@@ -88,8 +86,8 @@
       players ÷ churn rate). "Average MAU" (in the revenue banner above)
       is the mean across this full 24-month run, and gross revenue is MAU
       × $5.50/month.
-      <span id="syncNote"></span>
-    </div>
+      <span id="syncNote"></span> <a href="install-model.html">Adjust install assumptions →</a>
+    </div></details>
   </div>
 
   <div class="model-card">
@@ -101,9 +99,7 @@
       </div>
       <input type="range" id="engageRate" min="40" max="50" step="1" value="45">
       <div class="model-note">
-        Share of combined installs (Install Model page) that turn into a
-        real, engaged player—not just a download that's never opened
-        again.
+        Share of modeled installs that become active players.
       </div>
     </div>
     <div class="model-field model-lift-field">
@@ -113,13 +109,12 @@
       </div>
       <input type="range" id="monthlyChurn" min="5" max="25" step="1" value="15">
       <div class="model-note">
-        Share of active engaged players lost each month. Lower churn means
-        the MAU base builds toward a higher steady state.
+        Share of active players lost each month. Lower churn increases the retained audience.
       </div>
     </div>
   </div>
 </section>
-</main>
+</main><footer class="site-footer"><strong>Give It Away Games</strong><p>Built for 25 Words or Less · Powered by Influence Mobile</p><p>Illustrative scenarios. Actual results depend on acquisition, retention, game availability and commercial terms.</p><a href="index.html">Return to the proposal</a></footer>
 
 <script>
   const MONTHS = 24;
@@ -152,12 +147,16 @@
     const saved = window.localStorage.getItem('giveItAwayCombinedInstalls');
     if (saved) {
       const n = parseFloat(saved);
-      if (!Number.isNaN(n) && n > 0) { combinedInstalls = n; synced = true; }
+      if (!Number.isNaN(n) && Number.isFinite(n) && n >= 0) { combinedInstalls = n; synced = true; }
     }
   } catch (e) {
     // localStorage unavailable — keep the default scenario.
   }
 
+  const incoming = new URLSearchParams(window.location.search).get('installs');
+  if (incoming !== null && incoming.trim() !== '' && Number.isFinite(Number(incoming)) && Number(incoming) >= 0) {
+    combinedInstalls = Number(incoming); synced = true;
+  }
   function recalc(){
     const engageRate = parseFloat(els.engageRate.value) / 100;
     const monthlyChurn = parseFloat(els.monthlyChurn.value) / 100;
@@ -187,15 +186,19 @@
     out.gMau24.textContent = fmt(mau24);
     out.gSteadyMau.textContent = fmt(steadyMau);
     out.gAnnualRev.textContent = '$' + fmt(year2AnnualRev);
+    const share = rows => { const total=rows.reduce((a,b)=>a+b,0); return '$'+fmt(total*2)+'–$'+fmt(total*2.25); };
+    document.getElementById('partnerY1').textContent=share(mauSeries.slice(0,12));
+    document.getElementById('partnerY2').textContent=share(mauSeries.slice(12));
 
+    out.mauChart.setAttribute('aria-label', `Modeled active players: ${fmt(mau12)} at month 12 and ${fmt(mau24)} at month 24.`);
     const maxMau = Math.max(...mauSeries, 1);
     out.mauChart.innerHTML = mauSeries.map((v, i) =>
       `<div class="model-mau-bar${i>=12?' engaged-phase':''}" style="height:${Math.max(2,(v/maxMau)*100)}%" title="Month ${i+1}: ${fmt(v)} MAU"></div>`
     ).join('');
 
     out.syncNote.textContent = synced
-      ? ` Combined installs (${fmt(combinedInstalls)}) are synced from the Install Model page—the last scenario you viewed in this browser.`
-      : ` Using the Install Model page's default scenario (${fmt(combinedInstalls)} combined installs)—open that page first in this browser to feed in your own numbers.`;
+      ? ` Current acquisition scenario: ${fmt(combinedInstalls)} combined modeled installs from the Install Model.`
+      : ` Using the default install scenario (${fmt(combinedInstalls)} combined installs). Adjust acquisition assumptions on the Install Model page.`;
   }
 
   Object.values(els).forEach(el => el.addEventListener('input', recalc));
