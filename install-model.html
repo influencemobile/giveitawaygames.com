@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Install Model — 25 Words or Less Daily Play</title>
+<title>Install Model — Give It Away Games</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0b1731">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -13,12 +13,12 @@
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
-  <a class="brand-lockup" href="/" aria-label="25 Words or Less Daily Play concept home">
-    <img class="brand-logo" src="assets/25-words-or-less-logo.png" alt="25 Words or Less">
+  <a class="brand-lockup" href="index.html" aria-label="Give It Away Games partnership home">
+    <span class="app-name">GIVE IT AWAY<br><b>GAMES</b></span><img class="brand-logo" src="assets/25-words-or-less-logo.png" alt="25 Words or Less">
   </a>
-  <nav class="site-nav" aria-label="Model pages">
-    <a href="/economics-model">Economics Model</a>
-    <a href="/install-model" class="active">Install Model</a>
+  <nav class="site-nav" aria-label="Model pages"><a href="index.html">Overview</a>
+    <a href="economics-model.html">Economics Model</a>
+    <a href="install-model.html" class="active" aria-current="page">Install Model</a>
   </nav>
   <span class="privacy-chip">Internal planning tool</span>
 </header>
@@ -53,16 +53,12 @@
       <span class="mic-val tabular" id="integrationLiftVal">1.30x</span>
     </div>
     <p>
-      QR scans are the dominant channel here, but the same logic that
-      applied to AFV applies in reverse for 25 Words or Less: because the
-      scan happens inside the actual ad breaks of the show—not a generic
-      cross-promo—that on-air credibility should lift response on
-      <b>both</b> channels below. This multiplier applies on top of each
+      This adjustable assumption explores whether an in-show endorsement improves response across <b>both</b> QR and social channels. The lift is a planning hypothesis to validate during the pilot. This multiplier applies on top of each
       channel's own scan/CTR/conversion lifts below, and is already
       reflected in every "Modeled" figure and the combined total on this
       page.
     </p>
-    <input type="range" id="integrationLift" min="1" max="2" step="0.05" value="1.3">
+    <input aria-label="In-show integration credibility lift" type="range" id="integrationLift" min="1" max="2" step="0.05" value="1.3">
     <div class="mic-note">
       At <b id="integrationLiftNote">1.30x</b>, being woven into the
       actual show and its ad breaks—rather than a bare QR code or a
@@ -362,6 +358,7 @@
 
     // ---- Combined total ----
     const combined = modDownloads + modAnnualInstalls;
+    document.querySelectorAll('a[href^="economics-model.html"]').forEach(link => link.href='economics-model.html?installs='+encodeURIComponent(combined));
     out.cbTotal.textContent = fmt(combined);
     out.cbQr.textContent = fmt(modDownloads);
     out.cbSocial.textContent = fmt(modAnnualInstalls);

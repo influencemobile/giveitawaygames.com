@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Economics Model — 25 Words or Less Daily Play</title>
+<title>Economics Model — Give It Away Games</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0b1731">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -13,12 +13,12 @@
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
-  <a class="brand-lockup" href="/" aria-label="25 Words or Less Daily Play concept home">
-    <img class="brand-logo" src="assets/25-words-or-less-logo.png" alt="25 Words or Less">
+  <a class="brand-lockup" href="index.html" aria-label="Give It Away Games partnership home">
+    <span class="app-name">GIVE IT AWAY<br><b>GAMES</b></span><img class="brand-logo" src="assets/25-words-or-less-logo.png" alt="25 Words or Less">
   </a>
-  <nav class="site-nav" aria-label="Model pages">
-    <a href="/economics-model" class="active">Economics Model</a>
-    <a href="/install-model">Install Model</a>
+  <nav class="site-nav" aria-label="Model pages"><a href="index.html">Overview</a>
+    <a href="economics-model.html" class="active" aria-current="page">Economics Model</a>
+    <a href="install-model.html">Install Model</a>
   </nav>
   <span class="privacy-chip">Internal planning tool</span>
 </header>
@@ -30,13 +30,12 @@
     <h2>Economics Model</h2>
     <p>
       Revenue projections that flow from engaged installs, monthly churn,
-      and the resulting Monthly Active User base—at Rewarded Play's
-      standard $5.50 gross revenue per Monthly Active User.
+      and the resulting Monthly Active User base—at the supplied $5.50 monthly gross revenue assumption per active player.
     </p>
   </div>
 
   <div class="model-revenue-hero">
-    <div class="mrh-label">Revenue Projection</div>
+    <div class="mrh-label">Illustrative Gross Revenue</div>
     <div class="mrh-figures">
       <div class="mrh-figure">
         <div class="mrh-value tabular" id="gAvgRevHero">$0</div>
@@ -44,7 +43,7 @@
       </div>
       <div class="mrh-figure">
         <div class="mrh-value tabular" id="gAnnualRev">$0</div>
-        <div class="mrh-sub">Year-2 Annualized Revenue</div>
+        <div class="mrh-sub">Year 2 Gross Revenue</div>
       </div>
     </div>
     <div class="mrh-note">
@@ -92,7 +91,7 @@
     </div>
   </div>
 
-  <div class="model-card">
+  <div class="model-card"><h3>Partner share</h3><p>Separate from gross platform revenue above. Uses the supplied $2.00–$2.25 per active player per month planning range.</p><div class="model-stat-strip"><div class="model-stat"><span>Year 1 partner share</span><strong id="partnerY1">—</strong></div><div class="model-stat"><span>Year 2 partner share</span><strong id="partnerY2">—</strong></div></div><p class="model-note">Totals sum each year’s monthly active-player estimates. These scenarios are not forecasts or guarantees.</p></div><div class="model-card">
     <h3>Growth Inputs</h3>
     <div class="model-field">
       <div class="model-field-top">
@@ -152,12 +151,16 @@
     const saved = window.localStorage.getItem('giveItAwayCombinedInstalls');
     if (saved) {
       const n = parseFloat(saved);
-      if (!Number.isNaN(n) && n > 0) { combinedInstalls = n; synced = true; }
+      if (!Number.isNaN(n) && Number.isFinite(n) && n >= 0) { combinedInstalls = n; synced = true; }
     }
   } catch (e) {
     // localStorage unavailable — keep the default scenario.
   }
 
+  const incoming = new URLSearchParams(window.location.search).get('installs');
+  if (incoming !== null && incoming.trim() !== '' && Number.isFinite(Number(incoming)) && Number(incoming) >= 0) {
+    combinedInstalls = Number(incoming); synced = true;
+  }
   function recalc(){
     const engageRate = parseFloat(els.engageRate.value) / 100;
     const monthlyChurn = parseFloat(els.monthlyChurn.value) / 100;
@@ -187,6 +190,9 @@
     out.gMau24.textContent = fmt(mau24);
     out.gSteadyMau.textContent = fmt(steadyMau);
     out.gAnnualRev.textContent = '$' + fmt(year2AnnualRev);
+    const share = rows => { const total=rows.reduce((a,b)=>a+b,0); return '$'+fmt(total*2)+'–$'+fmt(total*2.25); };
+    document.getElementById('partnerY1').textContent=share(mauSeries.slice(0,12));
+    document.getElementById('partnerY2').textContent=share(mauSeries.slice(12));
 
     const maxMau = Math.max(...mauSeries, 1);
     out.mauChart.innerHTML = mauSeries.map((v, i) =>
@@ -194,7 +200,7 @@
     ).join('');
 
     out.syncNote.textContent = synced
-      ? ` Combined installs (${fmt(combinedInstalls)}) are synced from the Install Model page—the last scenario you viewed in this browser.`
+      ? ` Combined installs (${fmt(combinedInstalls)}) are synced from the Install Model page—the scenario passed in the link or last saved in this browser.`
       : ` Using the Install Model page's default scenario (${fmt(combinedInstalls)} combined installs)—open that page first in this browser to feed in your own numbers.`;
   }
 
