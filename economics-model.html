@@ -20,17 +20,16 @@
     <a href="economics-model.html" class="active" aria-current="page">Economics Model</a>
     <a href="install-model.html">Install Model</a>
   </nav>
-  <span class="privacy-chip">Internal planning tool</span>
+  <span class="privacy-chip">Partnership economics</span>
 </header>
 
 <main id="main">
 <section class="section model-section" id="economics-model">
-  <div class="section-kicker">Live model</div>
+  <div class="section-kicker">Interactive scenario model</div>
   <div class="section-heading">
     <h2>Economics Model</h2>
     <p>
-      Revenue projections that flow from engaged installs, monthly churn,
-      and the resulting Monthly Active User base—at the supplied $5.50 monthly gross revenue assumption per active player.
+      Explore how installs and retention build a monthly active-player audience over 24 months. Gross platform revenue and partner revenue share are shown separately.
     </p>
   </div>
 
@@ -47,8 +46,7 @@
       </div>
     </div>
     <div class="mrh-note">
-      At $5.50 gross revenue per Monthly Active User—the same per-player
-      rate used across Rewarded Play's white-label model—averaging
+      Uses Influence Mobile’s $5.50 monthly gross revenue assumption per active player, averaging
       <b class="tabular" id="gAvgMau">0</b> MAU across the 24-month run
       below.
     </div>
@@ -56,7 +54,7 @@
 
   <div class="model-card">
     <h3>Monthly Active Users Over Time</h3>
-    <div class="model-mau-chart" id="mauChart"></div>
+    <div class="model-mau-chart" id="mauChart" role="img" aria-label="Monthly active players over 24 months"></div>
     <div class="model-mau-axis"><span>Month 1</span><span>Month 12</span><span>Month 24</span></div>
 
     <div class="model-stat-strip">
@@ -79,7 +77,7 @@
     </div>
 
     <div class="model-foot-note">
-      Model: each month, (combined modeled installs from the Install Model
+      Assumes installs arrive evenly across each year, with the same annual acquisition pace repeated in year 2. Each month, (combined modeled installs from the Install Model
       page ÷ 12) × engaged-install rate = new engaged players added to the
       base; the existing base loses the churn rate each month before that
       addition. Steady-State MAU is where the base would flatten out if
@@ -87,11 +85,11 @@
       players ÷ churn rate). "Average MAU" (in the revenue banner above)
       is the mean across this full 24-month run, and gross revenue is MAU
       × $5.50/month.
-      <span id="syncNote"></span>
+      <span id="syncNote"></span> <a href="install-model.html">Adjust install assumptions →</a>
     </div>
   </div>
 
-  <div class="model-card"><h3>Partner share</h3><p>Separate from gross platform revenue above. Uses the supplied $2.00–$2.25 per active player per month planning range.</p><div class="model-stat-strip"><div class="model-stat"><span>Year 1 partner share</span><strong id="partnerY1">—</strong></div><div class="model-stat"><span>Year 2 partner share</span><strong id="partnerY2">—</strong></div></div><p class="model-note">Totals sum each year’s monthly active-player estimates. These scenarios are not forecasts or guarantees.</p></div><div class="model-card">
+  <div class="model-card"><h3>Partner share</h3><p>Estimated partner revenue share uses Influence Mobile’s $2.00–$2.25 monthly rate per active player. This is the partner’s portion of the business economics, separate from the gross revenue shown above.</p><div class="model-stat-strip"><div class="model-stat"><span>Year 1 partner share</span><strong id="partnerY1">—</strong></div><div class="model-stat"><span>Year 2 partner share</span><strong id="partnerY2">—</strong></div></div><p class="model-note">Totals sum each year’s monthly active-player estimates. These scenarios are not forecasts or guarantees.</p></div><div class="model-card">
     <h3>Growth Inputs</h3>
     <div class="model-field">
       <div class="model-field-top">
@@ -118,7 +116,7 @@
     </div>
   </div>
 </section>
-</main>
+</main><footer class="site-footer"><strong>Give It Away Games</strong><p>A partnership proposal from Influence Mobile</p><p>Illustrative scenarios. Actual results depend on acquisition, retention, game availability and commercial terms.</p><a href="index.html">Return to the proposal</a></footer>
 
 <script>
   const MONTHS = 24;
@@ -194,14 +192,15 @@
     document.getElementById('partnerY1').textContent=share(mauSeries.slice(0,12));
     document.getElementById('partnerY2').textContent=share(mauSeries.slice(12));
 
+    out.mauChart.setAttribute('aria-label', `Modeled active players: ${fmt(mau12)} at month 12 and ${fmt(mau24)} at month 24.`);
     const maxMau = Math.max(...mauSeries, 1);
     out.mauChart.innerHTML = mauSeries.map((v, i) =>
       `<div class="model-mau-bar${i>=12?' engaged-phase':''}" style="height:${Math.max(2,(v/maxMau)*100)}%" title="Month ${i+1}: ${fmt(v)} MAU"></div>`
     ).join('');
 
     out.syncNote.textContent = synced
-      ? ` Combined installs (${fmt(combinedInstalls)}) are synced from the Install Model page—the scenario passed in the link or last saved in this browser.`
-      : ` Using the Install Model page's default scenario (${fmt(combinedInstalls)} combined installs)—open that page first in this browser to feed in your own numbers.`;
+      ? ` Current acquisition scenario: ${fmt(combinedInstalls)} combined modeled installs from the Install Model.`
+      : ` Using the default install scenario (${fmt(combinedInstalls)} combined installs). Adjust acquisition assumptions on the Install Model page.`;
   }
 
   Object.values(els).forEach(el => el.addEventListener('input', recalc));

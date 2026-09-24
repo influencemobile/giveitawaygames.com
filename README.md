@@ -21,3 +21,6 @@ The four obsolete phone PNGs are no longer used and may be removed from the repo
 The original supplied audience statistics, platform proof points, Season 9 figures and model assumptions are retained; they were not independently audited in this design refresh. Screen point values and 10%–30% bonus progression are illustrative, subject to final eligibility, limits and reset rules. Mockup controls are pictures, not a playable app.
 
 The package contains no tracking or production reward/account logic. The live models calculate scenarios locally. Noindex discourages indexing; it does not make a published site private.
+
+## Client presentation review
+Internal design-review language removed. Mobile navigation restored. Audience figures checked against the cited ESA 2025 release; the mental-stimulation figure is 65%, and the relevant older-player cohorts are named. Promotional lifts are explicitly assumptions; unique-install overlap limitations are disclosed. Model calculations and cross-page links verified. Live browser rendering has not been verified in this environment.

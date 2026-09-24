@@ -20,23 +20,20 @@
     <a href="economics-model.html">Economics Model</a>
     <a href="install-model.html" class="active" aria-current="page">Install Model</a>
   </nav>
-  <span class="privacy-chip">Internal planning tool</span>
+  <span class="privacy-chip">Partnership economics</span>
 </header>
 
 <main id="main">
 <section class="section model-section" id="install-model">
-  <div class="section-kicker">Live model</div>
+  <div class="section-kicker">Interactive scenario model</div>
   <div class="section-heading">
     <h2>Season Install Model</h2>
     <p>
-      A working model across both install channels—in-show QR scans and
-      weekly social posts—built on 25 Words or Less's real Season 9 promo
-      data, with adjustable variables for how much a real-rewards
-      incentive lifts response rates.
+      Explore acquisition through on-air QR codes and social posts. Season 9 promotion figures supplied for this proposal inform the baseline; conversion rates and promotional lifts are assumptions to test.
     </p>
   </div>
 
-  <div class="model-combined-banner">
+  <p class="scenario-note">Acquisition estimates are not deduplicated. Repeat QR scans and overlap between channels can overstate unique installs; the pilot will measure unique players and replace these assumptions with observed conversion.</p><div class="model-combined-banner">
     <div>
       <div class="mcb-figure tabular" id="cbTotal">179,848</div>
       <div class="mcb-label">Combined Modeled Season Installs</div>
@@ -49,7 +46,7 @@
 
   <div class="model-integration-card">
     <div class="mic-top">
-      <h3>In-Show Integration Credibility Lift</h3>
+      <h3>In-show promotion lift</h3>
       <span class="mic-val tabular" id="integrationLiftVal">1.30x</span>
     </div>
     <p>
@@ -86,7 +83,7 @@
         <div class="model-field">
           <div class="model-field-top"><label for="baseConv">Baseline scan-to-download conversion</label><span class="mf-val tabular" id="baseConvVal">5.0%</span></div>
           <input type="range" id="baseConv" min="1" max="20" step="0.5" value="5">
-          <div class="model-note">25 Words or Less doesn't have its own observed scan-to-download rate yet, so this defaults to AFV's real 5-episode pilot conversion (600 downloads / 12,000 scans) as the best available benchmark.</div>
+          <div class="model-note">A 5% starting assumption drawn from the AFV pilot figures supplied for this proposal (600 downloads / 12,000 scans). It is not an observed 25 Words or Less conversion rate.</div>
         </div>
         <ul class="model-ref-table">
           <li><span>Ad Break 1 — 200K+ scans, 56K+ unique devices</span></li>
@@ -103,12 +100,12 @@
         <div class="model-field model-lift-field">
           <div class="model-field-top"><label for="scanLift">Scan-volume lift</label><span class="mf-val lift tabular" id="scanLiftVal">1.25x</span></div>
           <input type="range" id="scanLift" min="1" max="2.5" step="0.05" value="1.25">
-          <div class="model-note">A modest bump—real gift-card rewards should pull somewhat more scans than a standard promo, not a dramatic jump.</div>
+          <div class="model-note">Assumed change in scan volume when the promotion includes gift-card rewards. A value of 1× means no increase.</div>
         </div>
         <div class="model-field model-lift-field">
           <div class="model-field-top"><label for="convLift">Conversion-rate lift</label><span class="mf-val lift tabular" id="convLiftVal">3.5x</span></div>
           <input type="range" id="convLift" min="1" max="6" step="0.1" value="3.5">
-          <div class="model-note">The bigger effect—once someone's already scanned, a real reward should meaningfully raise the odds they actually download.</div>
+          <div class="model-note">Assumed change in the share of scans that lead to an install. A value of 1× keeps baseline conversion unchanged.</div>
         </div>
         <div class="model-presets">
           <button class="preset-btn" data-scan="1.0" data-conv="1.0">Season 9 Baseline</button>
@@ -156,16 +153,16 @@
         <div class="model-field">
           <div class="model-field-top"><label for="baseCtr">Baseline post-to-link CTR</label><span class="mf-val tabular" id="baseCtrVal">1.0%</span></div>
           <input type="range" id="baseCtr" min="0.3" max="3" step="0.1" value="1">
-          <div class="model-note">Organic social benchmark (0.7–2% typical range).</div>
+          <div class="model-note">Planning assumption: the percentage of reached viewers who click a link.</div>
         </div>
         <div class="model-field">
           <div class="model-field-top"><label for="socialCvr">App-store page-to-install CVR</label><span class="mf-val tabular" id="socialCvrVal">20%</span></div>
           <input type="range" id="socialCvr" min="5" max="33" step="1" value="20">
-          <div class="model-note">Benchmarks range 5% (Trivia) to 33% (high-intent visitors).</div>
+          <div class="model-note">Planning assumption: the percentage of app-store visitors who install.</div>
         </div>
         <ul class="model-ref-table" id="refTable"></ul>
         <div class="model-note" style="margin-top:8px;">
-          Weekly organic reach across Facebook, Instagram, TikTok, YouTube &amp; X, from 25 Words or Less's real follower counts × typical reach rates per platform: <b class="tabular" id="totalReachRef">5,913</b>/post.
+          Weekly organic reach across Facebook, Instagram, TikTok, YouTube &amp; X, from the supplied follower counts multiplied by assumed reach rates: <b class="tabular" id="totalReachRef">5,913</b>/post.
         </div>
       </div>
 
@@ -174,7 +171,7 @@
         <div class="model-field model-lift-field">
           <div class="model-field-top"><label for="ctrLift">Click-through-rate lift</label><span class="mf-val lift tabular" id="ctrLiftVal">3.0x</span></div>
           <input type="range" id="ctrLift" min="1" max="4" step="0.1" value="3">
-          <div class="model-note">A real gift-card offer should make people meaningfully more likely to tap the link.</div>
+          <div class="model-note">Assumed increase in clicks when posts feature rewards. A value of 1× means no increase.</div>
         </div>
         <div class="model-presets">
           <button class="preset-btn" data-ctr="1.0">No Lift</button>
@@ -203,13 +200,13 @@
           <div class="model-bar-row"><div class="mbar-label">Installs</div><div class="mbar-track"><div class="mbar-fill modeled" id="sBarInstallsBase" style="width:33%;"></div></div><div class="mbar-val tabular" id="sBarInstallsVal">3.00x</div></div>
         </div>
         <div class="model-foot-note">
-          Baseline = 25 Words or Less's real follower counts across Facebook, Instagram, TikTok, YouTube &amp; X (200,773 total following), weekly posts at researched organic reach and CTR benchmarks, with no reward-driven lift. Modeled = baseline adjusted by the CTR-lift slider and the app-store CVR slider above.
+          Baseline = 25 Words or Less's real follower counts across Facebook, Instagram, TikTok, YouTube &amp; X (200,773 total following), weekly posts using assumed reach and click-through rates, with no reward-driven lift. Modeled = baseline adjusted by the CTR-lift slider and the app-store CVR slider above.
         </div>
       </div>
     </div>
   </div>
-</section>
-</main>
+<p><a class="model-inline-cta" href="economics-model.html">See this scenario’s revenue and partner share →</a></p></section>
+</main><footer class="site-footer"><strong>Give It Away Games</strong><p>A partnership proposal from Influence Mobile</p><p>Illustrative scenarios. Actual results depend on acquisition, retention, game availability and commercial terms.</p><a href="index.html">Return to the proposal</a></footer>
 
 <script>
   const PLATFORMS = [
