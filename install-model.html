@@ -23,20 +23,20 @@
   <span class="privacy-chip">Partnership proposal</span>
 </header>
 
-<main id="main">
+<main id="main"><noscript><p class="scenario-note">Enable JavaScript to adjust this model. Figures shown are the default scenario.</p></noscript>
 <section class="section model-section" id="install-model">
   <div class="section-kicker">Interactive scenario model</div>
   <div class="section-heading">
-    <h2>Season Install Model</h2>
+    <h2>Install Model</h2>
     <p>
-      Explore acquisition through on-air QR codes and social posts. Season 9 promotion figures supplied for this proposal inform the baseline; conversion rates and promotional lifts are assumptions to test.
+      Explore acquisition through on-air QR codes and social posts. The promotion figures in the original proposal inform the baseline; conversion rates and promotional lifts are assumptions to test.
     </p>
   </div>
 
   <p class="scenario-note">Acquisition estimates are not deduplicated. Repeat QR scans and overlap between channels can overstate unique installs; launch reporting will measure unique players and replace these assumptions with observed conversion.</p><div class="model-combined-banner">
     <div>
       <div class="mcb-figure tabular" id="cbTotal">179,848</div>
-      <div class="mcb-label">Combined Modeled Season Installs</div>
+      <div class="mcb-label">Combined Modeled Annual Installs</div>
     </div>
     <div class="mcb-breakdown">
       <div class="mcb-part"><div class="mcb-val tabular" id="cbQr">177,450</div><div class="mcb-lbl">from QR scans</div></div>
@@ -64,28 +64,28 @@
       <div class="model-card">
         <h3>QR Scan Inputs</h3>
         <div class="model-field">
-          <div class="model-field-top"><label for="episodes">Episodes in season</label><span class="mf-val tabular" id="episodesVal">260</span></div>
+          <div class="model-field-top"><label for="episodes">Episodes modeled per year</label><span class="mf-val tabular" id="episodesVal">260</span></div>
           <input type="range" id="episodes" min="150" max="320" step="1" value="260">
-          <div class="model-note">Season 9 aired 260 episodes.</div>
+          <div class="model-note">260 episodes is the existing annual planning assumption.</div>
         </div>
         <div class="model-field">
           <div class="model-field-top"><label for="scansEp">Baseline scans per episode</label><span class="mf-val tabular" id="scansEpVal">2,400</span></div>
           <input type="range" id="scansEp" min="500" max="6000" step="50" value="2400">
-          <div class="model-note">Observed rate from Season 9: 624K+ total QR scans across 3 in-episode ad breaks ÷ 260 episodes.</div>
+          <div class="model-note">Existing model basis: 624,000 scans ÷ 260 episodes = 2,400 scans per episode.</div>
         </div>
         <div class="model-field">
           <div class="model-field-top"><label for="baseConv">Baseline scan-to-download conversion</label><span class="mf-val tabular" id="baseConvVal">5.0%</span></div>
           <input type="range" id="baseConv" min="1" max="20" step="0.5" value="5">
           <div class="model-note">5% starting assumption from the supplied AFV campaign data (600 installs / 12,000 scans); not measured conversion for 25 Words or Less.</div>
         </div>
-        <ul class="model-ref-table">
+        <details class="model-method"><summary>Supplied campaign figures</summary><ul class="model-ref-table">
           <li><span>Ad Break 1 — 200K+ scans, 56K+ unique devices</span></li>
           <li><span>Ad Break 2 — 133K+ scans, 26K+ unique devices</span></li>
           <li><span>Ad Break 3 — 289K+ scans, 68K+ unique devices</span></li>
         </ul>
         <div class="model-note" style="margin-top:8px;">
-          123K+ unique devices scanned across the season (some scanned more than once, across breaks or episodes); 107K+ behind-the-scenes content plays with a 75% completion rate.
-        </div>
+          123K+ unique devices scanned in the supplied campaign summary (some scanned more than once, across breaks or episodes); 107K+ behind-the-scenes content plays with a 75% completion rate. These are inherited reference figures, not independently verified. The rounded ad-break values total 622K+, while the model uses the supplied 624K total; the source totals require reconciliation. Unique-device counts overlap across placements.
+        </div></details>
       </div>
 
       <div class="model-card">
@@ -101,7 +101,7 @@
           <div class="model-note">Assumed change in the share of scans that lead to an install. A value of 1× keeps baseline conversion unchanged.</div>
         </div>
         <div class="model-presets">
-          <button class="preset-btn" data-scan="1.0" data-conv="1.0">Season 9 Baseline</button>
+          <button class="preset-btn" data-scan="1.0" data-conv="1.0">QR Response: No Lift</button>
           <button class="preset-btn" data-scan="1.25" data-conv="3.5">Modest Case</button>
           <button class="preset-btn" data-scan="1.5" data-conv="5">Optimistic Case</button>
         </div>
@@ -113,21 +113,21 @@
         <h3>QR Scan Results</h3>
         <div class="model-headline-result">
           <div class="mhr-value tabular" id="rDownloads">177,450</div>
-          <div class="mhr-label">Modeled Season Downloads</div>
-          <div class="mhr-delta" id="rDelta">+0 vs. Season 9 baseline</div>
+          <div class="mhr-label">Modeled Annual Installs</div>
+          <div class="mhr-delta" id="rDelta">+469% vs. model baseline (31,200)</div>
         </div>
         <div class="model-results-grid">
           <div class="model-result-cell is-baseline"><div class="rlabel">Baseline Scans</div><div class="rval tabular" id="rBaseScans">624,000</div></div>
-          <div class="model-result-cell is-modeled"><div class="rlabel">Modeled Scans</div><div class="rval tabular" id="rModScans">624,000</div></div>
+          <div class="model-result-cell is-modeled"><div class="rlabel">Modeled Scans</div><div class="rval tabular" id="rModScans">780,000</div></div>
           <div class="model-result-cell is-baseline"><div class="rlabel">Baseline Downloads</div><div class="rval tabular" id="rBaseDownloads">31,200</div></div>
-          <div class="model-result-cell is-modeled"><div class="rlabel">Effective Conversion</div><div class="rval tabular" id="rEffConv">5.0%</div></div>
+          <div class="model-result-cell is-modeled"><div class="rlabel">Conversion Before In-Show Lift</div><div class="rval tabular" id="rEffConv">17.5%</div></div>
         </div>
         <div class="model-bars">
-          <div class="model-bar-row"><div class="mbar-label">Scans</div><div class="mbar-track"><div class="mbar-fill baseline" id="barScansBase" style="width:100%;"></div></div><div class="mbar-val tabular" id="barScansVal">1.00x</div></div>
-          <div class="model-bar-row"><div class="mbar-label">Downloads</div><div class="mbar-track"><div class="mbar-fill modeled" id="barDownloadsBase" style="width:100%;"></div></div><div class="mbar-val tabular" id="barDownloadsVal">1.00x</div></div>
+          <div class="model-bar-row"><div class="mbar-label">Scans</div><div class="mbar-track"><div class="mbar-fill baseline" id="barScansBase" style="width:100%;"></div></div><div class="mbar-val tabular" id="barScansVal">1.25x</div></div>
+          <div class="model-bar-row"><div class="mbar-label">Downloads</div><div class="mbar-track"><div class="mbar-fill modeled" id="barDownloadsBase" style="width:100%;"></div></div><div class="mbar-val tabular" id="barDownloadsVal">5.69x</div></div>
         </div>
         <div class="model-foot-note">
-          Baseline = 25 Words or Less's actual Season 9 rate (624K+ QR scans across 260 episodes and 3 ad breaks each, ≈2,400 scans/episode), with a scan-to-download conversion borrowed from AFV's observed campaign since 25 Words or Less doesn't have its own yet. Modeled = baseline adjusted by the scan-volume and conversion-rate sliders above. These are planning assumptions, not a forecast.
+          Baseline = episodes × scans per episode × assumed scan-to-install conversion. Modeled installs apply scan-volume, conversion and in-show promotion lifts. The conversion shown is before the in-show multiplier. These are planning assumptions, not a forecast.
         </div>
       </div>
     </div>
@@ -155,7 +155,7 @@
         </div>
         <ul class="model-ref-table" id="refTable"></ul>
         <div class="model-note" style="margin-top:8px;">
-          Weekly organic reach across Facebook, Instagram, TikTok, YouTube &amp; X, from the supplied follower counts multiplied by assumed reach rates: <b class="tabular" id="totalReachRef">5,913</b>/post.
+          Estimated reach per post across Facebook, Instagram, TikTok, YouTube &amp; X, from the supplied follower counts multiplied by assumed reach rates: <b class="tabular" id="totalReachRef">5,913</b>/post.
         </div>
       </div>
 
@@ -167,7 +167,7 @@
           <div class="model-note">Assumed increase in clicks when posts feature rewards. A value of 1× means no increase.</div>
         </div>
         <div class="model-presets">
-          <button class="preset-btn" data-ctr="1.0">No Lift</button>
+          <button class="preset-btn" data-ctr="1.0">Social Clicks: No Lift</button>
           <button class="preset-btn" data-ctr="2.0">2x</button>
           <button class="preset-btn" data-ctr="4.0">4x</button>
         </div>
@@ -179,21 +179,21 @@
         <h3>Social Post Results</h3>
         <div class="model-headline-result">
           <div class="mhr-value tabular" id="sDownloads">2,398</div>
-          <div class="mhr-label">Modeled Season Installs</div>
-          <div class="mhr-delta" id="sDelta">+0 vs. no-lift baseline</div>
+          <div class="mhr-label">Modeled Annual Installs</div>
+          <div class="mhr-delta" id="sDelta">+290% vs. no-lift baseline (615)</div>
         </div>
         <div class="model-results-grid">
           <div class="model-result-cell is-baseline"><div class="rlabel">Baseline Annual Clicks</div><div class="rval tabular" id="sBaseClicks">3,075</div></div>
           <div class="model-result-cell is-modeled"><div class="rlabel">Modeled Annual Clicks</div><div class="rval tabular" id="sModClicks">9,225</div></div>
           <div class="model-result-cell is-baseline"><div class="rlabel">Baseline Installs</div><div class="rval tabular" id="sBaseInstalls">615</div></div>
-          <div class="model-result-cell is-modeled"><div class="rlabel">Effective CTR</div><div class="rval tabular" id="sEffCtr">3.0%</div></div>
+          <div class="model-result-cell is-modeled"><div class="rlabel">CTR Before In-Show Lift</div><div class="rval tabular" id="sEffCtr">3.0%</div></div>
         </div>
         <div class="model-bars">
           <div class="model-bar-row"><div class="mbar-label">Clicks</div><div class="mbar-track"><div class="mbar-fill baseline" id="sBarClicksBase" style="width:33%;"></div></div><div class="mbar-val tabular" id="sBarClicksVal">3.00x</div></div>
-          <div class="model-bar-row"><div class="mbar-label">Installs</div><div class="mbar-track"><div class="mbar-fill modeled" id="sBarInstallsBase" style="width:33%;"></div></div><div class="mbar-val tabular" id="sBarInstallsVal">3.00x</div></div>
+          <div class="model-bar-row"><div class="mbar-label">Installs</div><div class="mbar-track"><div class="mbar-fill modeled" id="sBarInstallsBase" style="width:33%;"></div></div><div class="mbar-val tabular" id="sBarInstallsVal">3.90x</div></div>
         </div>
         <div class="model-foot-note">
-          Baseline = 25 Words or Less's real follower counts across Facebook, Instagram, TikTok, YouTube &amp; X (200,773 total following), weekly posts using assumed reach and click-through rates, with no reward-driven lift. Modeled = baseline adjusted by the CTR-lift slider and the app-store CVR slider above.
+          Baseline = the supplied follower counts across Facebook, Instagram, TikTok, YouTube &amp; X (200,773 total followers across accounts, not unique people), weekly posts using assumed reach and click-through rates, with no reward-driven lift. Modeled installs apply the click-rate lift, store conversion and in-show promotion multiplier.
         </div>
       </div>
     </div>
@@ -266,7 +266,7 @@
 
   out.totalReachRef.textContent = fmt(TOTAL_WEEKLY_REACH);
   out.refTable.innerHTML = PLATFORMS.map(p =>
-    `<li><span>${p.name} — ${fmt(p.followers)} followers @ ${(p.reach*100).toFixed(1)}%</span><b>${fmt(p.followers*p.reach)}</b></li>`
+    `<li><span>${p.name} — ${fmt(p.followers)} followers @ ${Number((p.reach*100).toFixed(2))}%</span><b>${fmt(p.followers*p.reach)}</b></li>`
   ).join('');
 
   function recalc(){
@@ -300,7 +300,7 @@
     out.rDownloads.textContent = fmt(modDownloads);
 
     const deltaPct = baseDownloads > 0 ? ((modDownloads/baseDownloads - 1)*100) : 0;
-    out.rDelta.textContent = (deltaPct>=0?'+':'') + deltaPct.toFixed(0) + '% vs. Season 9 baseline (' + fmt(baseDownloads) + ')';
+    out.rDelta.textContent = (deltaPct>=0?'+':'') + deltaPct.toFixed(0) + '% vs. model baseline (' + fmt(baseDownloads) + ')';
 
     const scanRatio = modScans/baseScans;
     const downloadRatio = baseDownloads>0 ? modDownloads/baseDownloads : 1;
