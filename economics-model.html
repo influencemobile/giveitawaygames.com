@@ -20,7 +20,7 @@
     <a href="economics-model.html" class="active" aria-current="page">Economics Model</a>
     <a href="install-model.html">Install Model</a>
   </nav>
-  <span class="privacy-chip">Partnership economics</span>
+  <span class="privacy-chip">Partnership proposal</span>
 </header>
 
 <main id="main">
@@ -29,11 +29,12 @@
   <div class="section-heading">
     <h2>Economics Model</h2>
     <p>
-      Explore how installs and retention build a monthly active-player audience over 24 months. Gross platform revenue and partner revenue share are shown separately.
+      See how acquisition and retention translate into partner revenue over 24 months. Adjust the growth inputs below or change the acquisition assumptions in the Install Model.
     </p>
   </div>
 
-  <div class="model-revenue-hero">
+  <div class="model-card partner-share-lead"><h3>Partner share</h3><p>Uses $2.00–$2.25 per active player per month. Figures below show the partner’s share; gross platform revenue is shown separately.</p><div class="model-stat-strip"><div class="model-stat"><span>Year 1 partner share</span><strong id="partnerY1">—</strong></div><div class="model-stat"><span>Year 2 partner share</span><strong id="partnerY2">—</strong></div></div><p class="model-note">Totals sum each year’s monthly active-player estimates. Minimum-guarantee amounts, payment timing and any offset against revenue share are not modeled; these remain subject to agreement.</p></div>
+<div class="model-revenue-hero">
     <div class="mrh-label">Illustrative Gross Revenue</div>
     <div class="mrh-figures">
       <div class="mrh-figure">
@@ -76,7 +77,7 @@
       </div>
     </div>
 
-    <div class="model-foot-note">
+    <details class="model-method"><summary>Model assumptions and methodology</summary><div class="model-foot-note">
       Assumes installs arrive evenly across each year, with the same annual acquisition pace repeated in year 2. Each month, (combined modeled installs from the Install Model
       page ÷ 12) × engaged-install rate = new engaged players added to the
       base; the existing base loses the churn rate each month before that
@@ -86,10 +87,10 @@
       is the mean across this full 24-month run, and gross revenue is MAU
       × $5.50/month.
       <span id="syncNote"></span> <a href="install-model.html">Adjust install assumptions →</a>
-    </div>
+    </div></details>
   </div>
 
-  <div class="model-card"><h3>Partner share</h3><p>Estimated partner revenue share uses Influence Mobile’s $2.00–$2.25 monthly rate per active player. This is the partner’s portion of the business economics, separate from the gross revenue shown above.</p><div class="model-stat-strip"><div class="model-stat"><span>Year 1 partner share</span><strong id="partnerY1">—</strong></div><div class="model-stat"><span>Year 2 partner share</span><strong id="partnerY2">—</strong></div></div><p class="model-note">Totals sum each year’s monthly active-player estimates. These scenarios are not forecasts or guarantees.</p></div><div class="model-card">
+  <div class="model-card">
     <h3>Growth Inputs</h3>
     <div class="model-field">
       <div class="model-field-top">
@@ -98,9 +99,7 @@
       </div>
       <input type="range" id="engageRate" min="40" max="50" step="1" value="45">
       <div class="model-note">
-        Share of combined installs (Install Model page) that turn into a
-        real, engaged player—not just a download that's never opened
-        again.
+        Share of modeled installs that become active players.
       </div>
     </div>
     <div class="model-field model-lift-field">
@@ -110,13 +109,12 @@
       </div>
       <input type="range" id="monthlyChurn" min="5" max="25" step="1" value="15">
       <div class="model-note">
-        Share of active engaged players lost each month. Lower churn means
-        the MAU base builds toward a higher steady state.
+        Share of active players lost each month. Lower churn increases the retained audience.
       </div>
     </div>
   </div>
 </section>
-</main><footer class="site-footer"><strong>Give It Away Games</strong><p>A partnership proposal from Influence Mobile</p><p>Illustrative scenarios. Actual results depend on acquisition, retention, game availability and commercial terms.</p><a href="index.html">Return to the proposal</a></footer>
+</main><footer class="site-footer"><strong>Give It Away Games</strong><p>Built for 25 Words or Less · Powered by Influence Mobile</p><p>Illustrative scenarios. Actual results depend on acquisition, retention, game availability and commercial terms.</p><a href="index.html">Return to the proposal</a></footer>
 
 <script>
   const MONTHS = 24;

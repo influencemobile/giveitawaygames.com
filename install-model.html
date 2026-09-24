@@ -20,7 +20,7 @@
     <a href="economics-model.html">Economics Model</a>
     <a href="install-model.html" class="active" aria-current="page">Install Model</a>
   </nav>
-  <span class="privacy-chip">Partnership economics</span>
+  <span class="privacy-chip">Partnership proposal</span>
 </header>
 
 <main id="main">
@@ -33,7 +33,7 @@
     </p>
   </div>
 
-  <p class="scenario-note">Acquisition estimates are not deduplicated. Repeat QR scans and overlap between channels can overstate unique installs; the pilot will measure unique players and replace these assumptions with observed conversion.</p><div class="model-combined-banner">
+  <p class="scenario-note">Acquisition estimates are not deduplicated. Repeat QR scans and overlap between channels can overstate unique installs; launch reporting will measure unique players and replace these assumptions with observed conversion.</p><div class="model-combined-banner">
     <div>
       <div class="mcb-figure tabular" id="cbTotal">179,848</div>
       <div class="mcb-label">Combined Modeled Season Installs</div>
@@ -50,18 +50,11 @@
       <span class="mic-val tabular" id="integrationLiftVal">1.30x</span>
     </div>
     <p>
-      This adjustable assumption explores whether an in-show endorsement improves response across <b>both</b> QR and social channels. The lift is a planning hypothesis to validate during the pilot. This multiplier applies on top of each
-      channel's own scan/CTR/conversion lifts below, and is already
-      reflected in every "Modeled" figure and the combined total on this
-      page.
+      An assumed multiplier for on-air endorsement across QR and social channels, applied after each channel’s own response lifts. A value of 1× means no added lift.
     </p>
     <input aria-label="In-show integration credibility lift" type="range" id="integrationLift" min="1" max="2" step="0.05" value="1.3">
     <div class="mic-note">
-      At <b id="integrationLiftNote">1.30x</b>, being woven into the
-      actual show and its ad breaks—rather than a bare QR code or a
-      stand-alone post—is modeled as lifting both channels' final numbers
-      by that much versus running the same promotion with no on-air
-      tie-in.
+      Current multiplier: <b id="integrationLiftNote">1.30x</b>. This is an assumption, not a measured result.
     </div>
   </div>
 
@@ -83,7 +76,7 @@
         <div class="model-field">
           <div class="model-field-top"><label for="baseConv">Baseline scan-to-download conversion</label><span class="mf-val tabular" id="baseConvVal">5.0%</span></div>
           <input type="range" id="baseConv" min="1" max="20" step="0.5" value="5">
-          <div class="model-note">A 5% starting assumption drawn from the AFV pilot figures supplied for this proposal (600 downloads / 12,000 scans). It is not an observed 25 Words or Less conversion rate.</div>
+          <div class="model-note">5% starting assumption from the supplied AFV campaign data (600 installs / 12,000 scans); not measured conversion for 25 Words or Less.</div>
         </div>
         <ul class="model-ref-table">
           <li><span>Ad Break 1 — 200K+ scans, 56K+ unique devices</span></li>
@@ -134,7 +127,7 @@
           <div class="model-bar-row"><div class="mbar-label">Downloads</div><div class="mbar-track"><div class="mbar-fill modeled" id="barDownloadsBase" style="width:100%;"></div></div><div class="mbar-val tabular" id="barDownloadsVal">1.00x</div></div>
         </div>
         <div class="model-foot-note">
-          Baseline = 25 Words or Less's actual Season 9 rate (624K+ QR scans across 260 episodes and 3 ad breaks each, ≈2,400 scans/episode), with a scan-to-download conversion borrowed from AFV's observed pilot since 25 Words or Less doesn't have its own yet. Modeled = baseline adjusted by the scan-volume and conversion-rate sliders above. These are planning assumptions, not a forecast.
+          Baseline = 25 Words or Less's actual Season 9 rate (624K+ QR scans across 260 episodes and 3 ad breaks each, ≈2,400 scans/episode), with a scan-to-download conversion borrowed from AFV's observed campaign since 25 Words or Less doesn't have its own yet. Modeled = baseline adjusted by the scan-volume and conversion-rate sliders above. These are planning assumptions, not a forecast.
         </div>
       </div>
     </div>
@@ -206,7 +199,7 @@
     </div>
   </div>
 <p><a class="model-inline-cta" href="economics-model.html">See this scenario’s revenue and partner share →</a></p></section>
-</main><footer class="site-footer"><strong>Give It Away Games</strong><p>A partnership proposal from Influence Mobile</p><p>Illustrative scenarios. Actual results depend on acquisition, retention, game availability and commercial terms.</p><a href="index.html">Return to the proposal</a></footer>
+</main><footer class="site-footer"><strong>Give It Away Games</strong><p>Built for 25 Words or Less · Powered by Influence Mobile</p><p>Illustrative scenarios. Actual results depend on acquisition, retention, game availability and commercial terms.</p><a href="index.html">Return to the proposal</a></footer>
 
 <script>
   const PLATFORMS = [

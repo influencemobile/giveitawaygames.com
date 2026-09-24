@@ -1,26 +1,25 @@
-# Give It Away Games — revised partnership site
+# Give It Away Games — partnership presentation
 
-## Preview
-Unzip this package and open `index.html` in Chrome, Safari or Edge. Keep all files and the assets folder together. Alternatively, run `npm run dev` with Python 3 installed and open http://localhost:4173.
+Give It Away Games is the dedicated 25 Words or Less white-label rewards app, powered by Influence Mobile.
 
-## Update your existing GitHub site
-Upload the CONTENTS of this folder into the existing repository root, replacing matching files. Include all HTML files, styles.css, site.js, assets, package.json and vercel.json. Do not upload only the ZIP or nest it inside an extra folder. The site requires no build step.
+## Preview and upload
+Unzip and open index.html in a browser, keeping all files and assets together. For local serving, run npm run dev with Python 3 installed.
 
-The four obsolete phone PNGs are no longer used and may be removed from the repository. The revised WebP images have new filenames to avoid stale image caches. Existing show/app logo files and the favicon are retained.
+Upload all package contents to the SAME GitHub review branch, replacing matching files. Do not upload the ZIP or an enclosing folder. Commit to that branch to update its existing pull request. Review the Vercel preview before merging into the production branch.
 
-## What changed
-- All old phone images replaced by the four revised Daily Word / Boost Unlocked / Discover Games / Daily Progress designs.
-- Prominent show branding with Give It Away Games clearly identified as the app.
-- Removed crowd matching and the daily cash prize pool from the product narrative.
-- Larger screen gallery with keyboard-accessible, full-size image viewing.
-- Simplified hero, consistent typography, responsive navigation and reduced-motion support.
-- Both install and economics models retained, with portable relative links and install totals passed into the economics page even when browser storage is unavailable.
-- Added separate Year 1 and Year 2 partner-share outputs. Corrected the Year 2 gross-revenue label: it sums months 13–24 rather than annualizing a single month.
+No build step is required. Existing Vercel configuration is included. Relative page links work in local folders and GitHub Pages.
 
-## Assumptions
-The original supplied audience statistics, platform proof points, Season 9 figures and model assumptions are retained; they were not independently audited in this design refresh. Screen point values and 10%–30% bonus progression are illustrative, subject to final eligibility, limits and reset rules. Mockup controls are pictures, not a playable app.
+## Presentation
+- Five sections including the opening: dedicated app, player experience, platform, financial opportunity, partnership.
+- Four approved phone mockups with full-size viewing.
+- $250M+ lifetime revenue and $50M+ rewards paid, per Influence Mobile.
+- Partnership and launch language throughout; no proposed pilot.
+- Install and 24-month economics models retained; partner share is shown first.
+- No guarantee amount or agreed commercial term has been invented. Minimum-guarantee payments and offsets are not included in the model.
 
-The package contains no tracking or production reward/account logic. The live models calculate scenarios locally. Noindex discourages indexing; it does not make a published site private.
+## Checks and assumptions
+HTML nesting, page links, assets, JavaScript and model calculations checked. Browser rendering has not been verified in this environment.
 
-## Client presentation review
-Internal design-review language removed. Mobile navigation restored. Audience figures checked against the cited ESA 2025 release; the mental-stimulation figure is 65%, and the relevant older-player cohorts are named. Promotional lifts are explicitly assumptions; unique-install overlap limitations are disclosed. Model calculations and cross-page links verified. Live browser rendering has not been verified in this environment.
+The main page's 45,000-player annualized scenario is distinct from the 24-month acquisition ramp. Original acquisition and revenue assumptions are preserved. Repeat scans and channel overlap are not deduplicated; this is disclosed on the Install Model page. Illustrative game offers and bonus rules remain subject to final launch configuration.
+
+Noindex is not access control. No live accounts, reward processing or analytics are included.
